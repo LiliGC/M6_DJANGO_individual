@@ -53,7 +53,7 @@ def registro_cliente(request):
 
         return render(request, 'labtienda/registro.html', {"form":form}) 
 
-def registro_user(request):
+def register_user(request):
 	if request.method == "POST":
 		form = NewUserForm(request.POST)
 		if form.is_valid():
