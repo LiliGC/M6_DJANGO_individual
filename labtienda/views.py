@@ -41,7 +41,7 @@ def registro_cliente(request):
             cliente.address=form.cleaned_data["address"]
             cliente.save()
             messages.success(request, 'Los datos han sido guardados satisfactoriamente') 
-            return redirect('usuarios') 
+            return redirect('registro') 
 
         else: messages.error(request,'Inválido') 
 
