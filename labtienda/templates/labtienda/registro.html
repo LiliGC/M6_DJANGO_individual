@@ -19,7 +19,11 @@
                 {% if messages %}
                     <script>
                         {% for message in messages %}
-                            alert("{{ message }}");
+                            Swal.fire({
+                                title: 'Felicitaciones',
+                                text: '{{message}} ',
+                                icon: 'success'
+                            });
                         {% endfor %}
                     </script>   
                 {% endif %}
