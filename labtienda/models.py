@@ -24,7 +24,7 @@ class Client(User):
 
 class Professional(User):
     title=models.CharField(max_length=50,verbose_name= 'Título')
-    ci=models.CharField(max_length=9, unique=True, verbose_name= 'Run')
+    ci=models.CharField(max_length=10, unique=True, verbose_name= 'Run')
     registration_date=models.DateField(default=datetime.date.today, verbose_name= 'Fecha de registro')
 
 
