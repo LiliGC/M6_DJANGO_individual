@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-
+{% load static %}
 <head>
     <meta charset="utf-8">
     {% block title %}<title>Laboratorios LGC</title>{% endblock %}
@@ -17,7 +17,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"> </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
-{% load static %}
     <link rel="stylesheet" href="{% static '/css/estilos.css' %}">
     <script src="{% static '/js/script2.js' %}" type="text/javascript"></script>
 </head>
@@ -44,7 +43,7 @@
                     <div class="bg-light shadow-3 p-4" style="background-color:#dee2e6">
                         {% if user.is_authenticated %}
                             <a class="nav-link" href="#">Bienvenido, {{user.username}}</a>
-                            <a class="btn btn-link btn-block border-bottom m-0" href=c>Inicio</a>
+                            <a class="btn btn-link btn-block border-bottom m-0" href="{% url 'index' %}">Inicio</a>
                             <a class="nav-link btn btn-link btn-block border-bottom m-0" href="{% url 'index' %}" >Productos</a>
                             <a class="nav-link btn btn-link btn-block border-bottom m-0"href="{% url 'usuarios' %}">Clientes</a>
                             <a class="nav-link btn btn-link btn-block border-bottom m-0"href="{% url 'logout' %}">Salir</a>
@@ -161,7 +160,22 @@
                 </div>
             </div>
     </footer>
-    {% block additionaljs %} 
+    {% block additionaljs %}
+        {% if messages %}
+            <script>
+                {% for message in messages %}
+                    {% if message.info %} class="{{ message.info}}"{% endif %}
+                        Swal.fire({
+                            title: 'Laboratorios LGC',
+                            text: '{{message}} ',
+                            imageUrl: 'https://corelaboratory.com/wp-content/uploads/2019/01/news_img.jpg', 
+                            imageWidth: 400,
+                            imageHeight: 250,
+                            imageAlt: 'Logo lab'
+                        });
+                {% endfor %}
+            </script>   
+        {% endif %} 
     {% endblock %}  
 {% endblock %}
 </body>

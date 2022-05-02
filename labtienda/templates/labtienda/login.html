@@ -17,13 +17,21 @@
                 <input class="btn btn-primary" type="submit" value="Iniciar sesión" /> 
                 </form> 
                 <p class="text-center">No tienes una cuenta, regístrate? <a href="/register_user">Crear una cuenta</a>.</p>
-            </div>    
+            </div>
+    {% block additionaljs %}
+            {% if messages %}
+            <script>
+                {% for message in messages %}
+                    {% if message.error %} class="{{ message.error}}"{% endif %}
+                        Swal.fire({
+                            title: 'Error',
+                            text: '{{message}} ',
+                            icon: 'error'
+                        });
+                {% endfor %}
+            </script>   
+            {% endif %} 
+    {% endblock %}     
         </div>
     </div>
-    {% if messages %} 
-        {% for m in messages %} 
-            {{m}}
-        {% endfor %} 
-    {% endif %}
-
 {% endblock %}

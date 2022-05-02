@@ -3,6 +3,8 @@ from .models import Client
 from .forms import ClienteForm
 from .forms import NewUserForm
 from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages 
 
@@ -11,6 +13,8 @@ def index(request):
 
     return render(request,'labtienda/index.html')
 
+@staff_member_required
+@login_required
 def usuarios(request):
 
     client=Client.objects.all().values() 
@@ -22,6 +26,8 @@ def usuarios(request):
     } 
     return render(request,'labtienda/usuarios.html', context)
 
+@staff_member_required
+@login_required
 def registro_cliente(request):
 
     form=ClienteForm() 
@@ -83,6 +89,7 @@ def login_user(request):
 	form = AuthenticationForm()
 	return render(request, 'labtienda/login.html',context={"login_form":form})
 
+@login_required
 def logout_user(request):
 	logout(request)
 	messages.info(request, "Haz cerrado sesión exitosamente.") 
