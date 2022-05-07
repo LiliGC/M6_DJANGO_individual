@@ -16,19 +16,19 @@ A futuro se va a implementar la página de productos, servicios, el sistema para
 
 -Clonar el repositorio usando gitbash o el terminal que tenga en su computador local con el siguiente comando:
 
-\ git clone https://github.com/LiliGC/M6_DJANGO_individual.git
+\\\ git clone https://github.com/LiliGC/M6_DJANGO_individual.git \\\
 
 -Abrir la carpeta con el repositorio clonado en un editor de texto como Visual Studio Code con la opción indicada en la imagen.
 
-![vscode](https://github.com/LiliGC/M6_DJANGO_individual/tree/main/labtienda/static/img/visualcode.png)
+![vscode](labtienda/static/img/visualcode.png)
 
 -Abrir un nuevo terminal en Visual Studio Code y crear el entorno virtual con el siguiente comando:
 
-\ pip install venv venv
+\\\ pip install venv venv \\\
 
 -Luego activar el entorno virtual:
 
-\ cd venv/cd Scripts/activate
+\\\ cd venv/cd Scripts/activate \\\
 
 -Volver a la carpeta principal con cd ..
 
