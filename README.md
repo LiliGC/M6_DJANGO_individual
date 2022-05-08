@@ -1,7 +1,9 @@
 # Módulo 6: Django
----
 
-## Laboratorios LGC
+
+## Laboratorios LGC :microscope:
+
+![vscode](labtienda/static/img/logo2.png)
 
 ***Liliana Garmendia***
 
@@ -14,41 +16,44 @@ A futuro se va a implementar la página de productos, servicios, el sistema para
 
 ## Instalación
 
--Clonar el repositorio usando gitbash o el terminal que tenga en su computador local con el siguiente comando:
+-Primero debes tener instalada la última versión de python.Se usó la versión 3.10 en este proyecto.
 
-\\\ git clone https://github.com/LiliGC/M6_DJANGO_individual.git \\\
-
--Abrir la carpeta con el repositorio clonado en un editor de texto como Visual Studio Code con la opción indicada en la imagen.
+-Clonar el repositorio usando gitbash o el terminal que tenga en su computador local como cmd con el siguiente comando:
+```
+git clone https://github.com/LiliGC/M6_DJANGO_individual.git
+```
+-Abrir la carpeta con el repositorio clonado en un editor de texto como Visual Studio Code con la opción indicada en la imagen. O puedes seguir todos los pasos siguientes desde el terminal de windows o de linux. Estos comandos son para el terminal de windows.
 
 ![vscode](labtienda/static/img/visualcode.png)
 
 -Abrir un nuevo terminal en Visual Studio Code y crear el entorno virtual con el siguiente comando:
-
-\\\ pip install venv venv \\\
-
+```
+python -m venv venv
+```
 -Luego activar el entorno virtual:
-
-\\\ cd venv/cd Scripts/activate \\\
-
+```
+cd venv/cd Scripts/activate
+```
 -Volver a la carpeta principal con cd ..
 
 -Ahora instalar requirements con el siguiente comando:
-
-\ pip install -r requirements.txt
-
+```
+pip install -r requirements.txt
+```
 -Hacer las migraciones con el comando:
-
-\ python manage.py migrate
-
+```
+python manage.py migrate
+```
 -Crear tu superusuario para acceder al admin:
-
-\ python manage.py createsuperuser
-
+```
+python manage.py createsuperuser
+```
 -Y finalmente levantar el servidor con:
-
-\ python manage.py runserver
-
-**Observaciones:** Si quisieras cargar los datos que utilicé de prueba tendrías que poner: \python manage.py loaddata data.json  y luego correr el comando \ python manage.py migrate.
+```
+python manage.py runserver
+```
+**Observaciones:** Si quisieras cargar los datos que utilicé de prueba tendrías que poner: ```python manage.py loaddata data.json ``` y luego correr el comando ```python manage.py migrate```
+Si tienes computador linux o mac revisa la instalación del entorno virtual en 
 
 ## Características de la aplicación
 
@@ -63,6 +68,8 @@ A futuro se va a implementar la página de productos, servicios, el sistema para
 ## Librerias usadas
 
 Revisar el archivo requirements.txt. Algunas observaciones:
+
+* Se usó la versión 3.10 de Python.
 
 * Se usó la versión más reciente de Django para crear la aplicación.
 
